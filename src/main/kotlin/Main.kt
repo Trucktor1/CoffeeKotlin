@@ -11,7 +11,7 @@ class CoffeeShop {
             "Американо" -> (1000L..2000L).random()
             "Капучино" -> (2000L..3500L).random()
             "Латте" -> (2500L..4000L).random()
-            else -> (1500L..3000L).random()
+            else -> (1550L..3050L).random()
         }
         println("Заказ $orderNumber: Начинаем готовить $type (${preparationTime}мс)")
         delay(preparationTime)
@@ -23,8 +23,8 @@ class CoffeeShop {
             "Простой сэндвич" -> (1000L..2000L).random()
             "Клаб-сэндвич" -> (2000L..3500L).random()
             "Тост с авокадо" -> (1500L..2500L).random()
-            "Бургер" -> (3000L..5000L).random()
-            else -> (2000L..4000L).random()
+            "Бургер" -> (3200L..5900L).random()
+            else -> (2100L..4500L).random()
         }
         println("Заказ $orderNumber: Начинаем готовить $type (${preparationTime}мс)")
         delay(preparationTime)
@@ -32,14 +32,14 @@ class CoffeeShop {
     }
 
     suspend fun prepareJuice(type: String = "Апельсиновый сок", orderNumber: Int) {
-        val preparationTime = (500L..1500L).random()
+        val preparationTime = (500L..1550L).random()
         println("Заказ $orderNumber: Начинаем готовить $type (${preparationTime}мс)")
         delay(preparationTime)
         println("Заказ $orderNumber: $type готов!")
     }
 
     suspend fun takeRandomOrder(orderNumber: Int) {
-        println("=== Заказ $orderNumber принят ===")
+        println("Заказ $orderNumber принят")
 
         val items = mutableListOf<Job>()
 
